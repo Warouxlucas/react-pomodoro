@@ -3,9 +3,12 @@ import React, { useState, useEffect, useRef } from "react";
 import Pause from "../components/pause";
 import Timer from "../components/timer";
 import TimeLeft from "../components/time-left";
+import audio from "../audio/yeay.mp3";
+import no from "../audio/no.mp3";
 
 function RootComponent() {
     const audioElement = useRef(null);
+    const audioBreak = useRef(null);
     const [currentSessionType, setCurrentSessionType] = useState("Timer"); //timer ou pause
     const [breakLengthInSeconds, setBreakLengthInSeconds] = useState(300);
     const [sessionLengthInSeconds, setSessionLengthInSeconds] = useState(
@@ -16,11 +19,16 @@ function RootComponent() {
     //change timeleft quand sessionLengthInSeconds change
     useEffect(() => {
         if (timeLeft === 0) {
+
             audioElement.current.play();
             if (currentSessionType === "Timer") {
+
+                // audioElement.current.play();
                 setCurrentSessionType("Pause");
                 setTimeLeft(breakLengthInSeconds);
             } else if (currentSessionType === "Pause") {
+
+                // audioBreak.current.play();
                 setCurrentSessionType("Timer");
                 setTimeLeft(sessionLengthInSeconds);
             }
@@ -75,7 +83,7 @@ function RootComponent() {
             //setInterval(() => {})
             const newIntervalId = setInterval(() => {
                 setTimeLeft(prevTimeLeft => prevTimeLeft - 1);
-            }, 100);
+            }, 1000);
             setIntervalId(newIntervalId);
         }
     };
@@ -98,7 +106,7 @@ function RootComponent() {
     return (
         <div className={"App"}>
             {isStarted ? (
-                ""
+                " "
             ) : (
                     <div>
                         <Pause
@@ -133,12 +141,10 @@ function RootComponent() {
             />
 
             <audio id={"audio"} ref={audioElement}>
-                <source
-                    src={
-                        "https://onlineclock.net/audio/options/military-trumpet.mp3"
-                    }
-                    type={"audio/mpeg"}
-                />
+                <source src={audio} type={"audio/mpeg"} />
+            </audio>
+            <audio id={"audio"} ref={audioBreak}>
+                <source src={no} type={"audio/mpeg"} />
             </audio>
         </div>
     );

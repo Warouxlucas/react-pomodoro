@@ -24,8 +24,8 @@ const Timer = ({
         .duration(sessionLengthInSeconds, "s")
         .minutes();
     return (
-        <div id={"travail"} className={"button-section"}>
-            <p id={"session-label"}>{"Session"}</p>
+        <div id={"worktime"} className={"button-section"}>
+            <p id={"session-label"}>{"WorkTime"}</p>
             <p id={"session-length"}>{sessionLengthInMinutes}</p>
             <div className={"button-container"}>
                 <button

@@ -1,5 +1,9 @@
-body{margin: 0;}
-#app{
+body
+{
+    margin: 0;
+}
+#app
+{
     background: #e1e1fa;
     height: 100vh;
 }
@@ -13,9 +17,10 @@ body{margin: 0;}
     /* height: 100vh; */
 }
 button{
-    padding: 8px;
     text-align: center;
     margin: auto;
+    margin-right: 9px;
+    margin-left: 9px;
     border-radius: 58px;
 background: #e1e1fa;
 box-shadow:  -1px -1px 2px #cdcde4, 
@@ -71,7 +76,7 @@ box-shadow:  -8px -8px 16px #cdcde4,
     top:20%;
     left:12%;
 }
-#travail{
+#worktime{
 
     top:20%;
     left:70%;

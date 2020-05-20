@@ -1,9 +1,6 @@
 /* eslint-disable react/button-has-type */
-// eslint-disable-next-line prettier/prettier
-import React, { useState } from "react";
+import React from "react";
 import moment from "moment";
-// eslint-disable-next-line no-unused-vars
-// eslint-disable-next-line prettier/prettier
 const Pause = ({
     breakLengthInSeconds,
     incrementBreakLengthByOneMinute,
